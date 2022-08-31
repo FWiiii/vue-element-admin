@@ -31,30 +31,34 @@ const closeTab = () => {
         <path d="M 4 4 L 12 12 M 12 4 L 4 12"></path>
       </svg>
     </div>
-    <svg class="tabs-before-l" width="7" height="7">
+    <!-- <svg class="tabs-before-l" width="7" height="7">
       <path d="M 0 7 A 7 7 0 0 0 7 0 L 7 7 Z"></path>
     </svg>
     <svg class="tabs-before-r" width="7" height="7">
       <path d="M 0 0 A 7 7 0 0 0 7 7 L 0 7 Z"></path>
-    </svg>
+    </svg> -->
   </div>
 </template>
 
 <style scoped lang="scss">
 .tab {
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+  // border-top-left-radius: 5px;
+  // border-top-right-radius: 5px;
   position: relative;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 8px 14px;
-  max-width: 140px;
+  max-width: 110px;
   min-width: 100px;
   flex: 1;
   font-size: 14px;
   transition: background-color 0.3s;
+  border: rgba(128, 128, 128, 0.2) solid 1px;
+  margin-right: 5px;
+  border-radius: 5px;
+  height: 30px;
 
   .title {
     width: 100%;
@@ -68,21 +72,12 @@ const closeTab = () => {
     .tab {
       &.active {
         background-color: #121212;
-
-        .tabs-before-l,
-        .tabs-before-r {
-          fill: #121212;
-        }
       }
     }
   }
   &.active {
-    background-color: #fff;
-
-    .tabs-before-l,
-    .tabs-before-r {
-      fill: #fff;
-    }
+    background-color: #ecf5ff;
+    border-color: #ecf5ff;
   }
 
   .close-icon {
@@ -91,23 +86,8 @@ const closeTab = () => {
     border-radius: 50%;
 
     &:hover {
-      background-color: #eee;
+      background-color: #fff;
     }
-  }
-
-  .tabs-before-l,
-  .tabs-before-r {
-    bottom: 0px;
-    position: absolute;
-    fill: transparent;
-  }
-
-  .tabs-before-l {
-    left: -7px;
-  }
-
-  .tabs-before-r {
-    right: -7px;
   }
 }
 </style>

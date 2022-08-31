@@ -16,15 +16,15 @@
     </el-card>
     <el-card>
       <div class="projects">
-        <div class="project-card" v-for="i in 15" :key="i">
+        <div class="project-card" v-for="i in 16" :key="i">
           <el-card>
-            <div class="project-top">
+            <div class="content-top">
               <span>Vue Element Admin</span>
             </div>
-            <div class="project-main">
-              <span
-                >一个基于 Vue3.0、Vite、ElementPlus 的轻量级后台管理模板</span
-              >
+            <div class="content-main">
+              <span> 一个基于 Vue3.0、Vite、ElementPlus </span>
+              <br>
+              <span>的轻量级后台管理模板</span>
             </div>
           </el-card>
         </div>
@@ -43,7 +43,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
+
     .user-left {
       display: flex;
       flex-direction: column;
@@ -61,13 +61,16 @@
   .projects {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
     .project-card {
       margin-bottom: 10px;
+      .content-top{
+        font-weight: 700;
+      }
     }
   }
   .el-card:nth-child(1) {
     margin-bottom: 20px;
-  } 
+  }
 }
 </style>

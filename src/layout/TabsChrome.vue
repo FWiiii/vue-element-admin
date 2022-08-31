@@ -71,7 +71,10 @@ const removeAllTab = () => {
 .nav-tab {
   display: flex;
   align-items: center;
-  background-color: #ebeef4;
+  background-color: #fff;
+  border: rgba(128, 128, 128, 0.2) 1px solid;
+  border-left: none;
+  border-right: none;
 
   .tabs-chrome {
     flex: 1;

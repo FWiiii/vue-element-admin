@@ -58,6 +58,27 @@ const asyncRoutes = [
     ],
   },
   {
+    path: "/article",
+    name: "article",
+    component: () => import("@/layout/MainLayout.vue"),
+    redirect: "/article/list",
+    meta: { icon: "Tickets", title: "文章", alwaysShow: true },
+    children: [
+      {
+        path: "list",
+        name: "article-list",
+        component: () => import("@/views/article/article-list/index.vue"),
+        meta: { icon: "Tickets", title: "文章列表" },
+      },
+      {
+        path: "create",
+        name: "create-article",
+        component: () => import("@/views/article/article-list/index.vue"),
+        meta: { icon: "Article", title: "创建文章" },
+      },
+    ],
+  },
+  {
     path: "/system",
     name: "system",
     component: () => import("@/layout/MainLayout.vue"),

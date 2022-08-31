@@ -43,7 +43,7 @@ const removeTab = (t) => {
 
 <style scoped lang="scss">
 .tabs {
-  padding: 8px 10px 0 10px;
+  padding: 8px;
   display: flex;
   width: 100%;
 }
