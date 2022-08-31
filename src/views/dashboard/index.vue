@@ -23,7 +23,7 @@
             </div>
             <div class="content-main">
               <span> 一个基于 Vue3.0、Vite、ElementPlus </span>
-              <br>
+              <br />
               <span>的轻量级后台管理模板</span>
             </div>
           </el-card>
@@ -64,7 +64,7 @@
     justify-content: space-evenly;
     .project-card {
       margin-bottom: 10px;
-      .content-top{
+      .content-top {
         font-weight: 700;
       }
     }

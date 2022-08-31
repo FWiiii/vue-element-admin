@@ -31,12 +31,6 @@ const closeTab = () => {
         <path d="M 4 4 L 12 12 M 12 4 L 4 12"></path>
       </svg>
     </div>
-    <!-- <svg class="tabs-before-l" width="7" height="7">
-      <path d="M 0 7 A 7 7 0 0 0 7 0 L 7 7 Z"></path>
-    </svg>
-    <svg class="tabs-before-r" width="7" height="7">
-      <path d="M 0 0 A 7 7 0 0 0 7 7 L 0 7 Z"></path>
-    </svg> -->
   </div>
 </template>
 

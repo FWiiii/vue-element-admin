@@ -10,6 +10,7 @@ specifiers:
   element-plus: ^2.2.15
   good-storage: ^1.1.1
   lodash: ^4.17.21
+  md-editor-v3: ^2.2.1
   mockjs: ^1.1.0
   pinia: ^2.0.21
   sass: ^1.54.5
@@ -29,6 +30,7 @@ dependencies:
   element-plus: 2.2.15_vue@3.2.37
   good-storage: 1.1.1
   lodash: 4.17.21
+  md-editor-v3: 2.2.1
   pinia: 2.0.21_vue@3.2.37
   unplugin-icons: 0.14.8_vite@3.0.9
   vue: 3.2.37
@@ -210,6 +212,10 @@ packages:
 
   /@types/lodash/4.14.184:
     resolution: {integrity: sha512-RoZphVtHbxPZizt4IcILciSWiC6dcn+eZ8oX9IWEYfDMcocdd42f7NPI6fQj+6zI8y4E0L7gu2pcZKLGTRaV9Q==}
+    dev: false
+
+  /@types/marked/4.0.6:
+    resolution: {integrity: sha512-ITAVUzsnVbhy5afxhs4PPPbrv2hKVEDH5BhhaQNQlVG0UNu+9A18XSdYr53nBdHZ0ADEQLl+ciOjXbs7eHdiQQ==}
     dev: false
 
   /@types/mockjs/1.0.6:
@@ -972,6 +978,13 @@ packages:
     dependencies:
       sourcemap-codec: 1.4.8
     dev: true
+
+  /md-editor-v3/2.2.1:
+    resolution: {integrity: sha512-nOd8mlEhvC99l9Y8pDMwEi6EdCAeBp88Ffl24We+2uz3/Iympctm92L1qyNicONJRhtZJacQ4oWTQGMYKGAxVg==}
+    engines: {node: '>=12.0.0'}
+    dependencies:
+      '@types/marked': 4.0.6
+    dev: false
 
   /memoize-one/6.0.0:
     resolution: {integrity: sha512-rkpe71W0N0c0Xz6QD0eJETuWAJGnJ9afsl1srmwPrI+yBCkge5EycXXbYRyvL29zZVUWQCY7InPRCv3GDXuZNw==}

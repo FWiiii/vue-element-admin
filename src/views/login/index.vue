@@ -51,7 +51,7 @@ const login = async () => {
         <el-input
           size="large"
           v-model="loginForm.name"
-          placeholder="用户名"
+          placeholder="admin或editor"
           type="text"
           maxlength="50"
           #prepend
@@ -64,7 +64,7 @@ const login = async () => {
           size="large"
           ref="password"
           v-model="loginForm.password"
-          placeholder="密码"
+          placeholder="密码随便输"
           name="password"
           maxlength="50"
           show-password

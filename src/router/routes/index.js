@@ -73,8 +73,13 @@ const asyncRoutes = [
       {
         path: "create",
         name: "create-article",
-        component: () => import("@/views/article/article-list/index.vue"),
-        meta: { icon: "Article", title: "创建文章" },
+        component: () => import("@/views/article/create-article/index.vue"),
+        meta: {
+          icon: "EditPen",
+          title: "创建文章",
+          role: ["admin"],
+          requireAuth: true,
+        },
       },
     ],
   },

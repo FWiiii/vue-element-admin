@@ -34,10 +34,9 @@ const { asideCollapse } = storeToRefs(appStore);
         <HeaderBar />
       </el-header>
       <TabsChrome />
-      <el-main>
+      <el-main class="cus-scroll">
         <router-view></router-view>
       </el-main>
-      <!--      <el-footer>Footer</el-footer>-->
     </el-container>
   </el-container>
 </template>
@@ -57,7 +56,32 @@ const { asideCollapse } = storeToRefs(appStore);
   }
   .el-main {
     padding: 20;
-    font-family: 'Raleway', sans-serif;
+    font-family: "Raleway", sans-serif;
+  }
+  .cus-scroll {
+    &::-webkit-scrollbar {
+      width: 8px;
+      height: 5px;
+    }
+    &::-webkit-scrollbar-thumb {
+      border-radius: 100px;
+      background: rgba(0, 0, 0, 0.1);
+    }
+    &::-webkit-scrollbar-track {
+      border-radius: 100px;
+      background: rgba(0, 0, 0, 0.1);
+    }
+    &::-webkit-scrollbar-corner {
+      background: #f6f6f6;
+    }
+    &:hover {
+      &::-webkit-scrollbar-thumb {
+        background: #bfbfbf;
+      }
+      &::-webkit-scrollbar-thumb:hover {
+        background: #999999;
+      }
+    }
   }
 }
 </style>
