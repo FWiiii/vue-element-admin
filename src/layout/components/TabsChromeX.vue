@@ -1,5 +1,5 @@
 <script setup>
-import VTab from "./Tab.vue";
+import VTab from './Tab.vue'
 
 const props = defineProps({
   tabs: {
@@ -8,25 +8,25 @@ const props = defineProps({
   },
   activePath: {
     type: String,
-    default: "",
+    default: '',
   },
-});
+})
 
-const emit = defineEmits(['clickTab', 'removeTab']);
+const emit = defineEmits(['clickTab', 'removeTab'])
 
-const clickTab = (t) => {
-  if (t.path == props.activePath) {
-    return;
-  }
-  emit("clickTab", t);
-};
-const removeTab = (t) => {
+function clickTab(t) {
+  if (t.path == props.activePath)
+    return
+
+  emit('clickTab', t)
+}
+function removeTab(t) {
   if (props.tabs.length == 1) {
-    //最少保留一个
-    return;
+    // 最少保留一个
+    return
   }
-  emit("removeTab", t);
-};
+  emit('removeTab', t)
+}
 </script>
 
 <template>

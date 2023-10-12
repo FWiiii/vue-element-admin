@@ -1,23 +1,24 @@
 <script setup>
-import { storeToRefs } from "pinia";
-import { useAppStore } from "@/store/modules/app";
-import { useUserStore } from "@/store/modules/user";
-import { useMediaQuery } from "@vueuse/core";
-import Breadcrumb from "@/layout/components/Breadcrumb.vue";
-import Fullscreen from "@/layout/components/Fullscreen.vue";
-import ThemeSwitch from "@/layout/components/themeSwitch/Index.vue";
-//===========
-const appStore = useAppStore();
-const { asideCollapse } = storeToRefs(appStore);
-//==========
-const userStore = useUserStore();
-const { name } = storeToRefs(userStore);
+import { storeToRefs } from 'pinia'
+import { useMediaQuery } from '@vueuse/core'
+import { useAppStore } from '@/store/modules/app'
+import { useUserStore } from '@/store/modules/user'
+import Breadcrumb from '@/layout/components/Breadcrumb.vue'
+import Fullscreen from '@/layout/components/Fullscreen.vue'
+import ThemeSwitch from '@/layout/components/themeSwitch/Index.vue'
 
-const isMobile = useMediaQuery(`(max-width: 750px)`);
+// ===========
+const appStore = useAppStore()
+const { asideCollapse } = storeToRefs(appStore)
+// ==========
+const userStore = useUserStore()
+const { name } = storeToRefs(userStore)
 
-const loginOut = () => {
-  userStore.loginOut();
-};
+const isMobile = useMediaQuery(`(max-width: 750px)`)
+
+function loginOut() {
+  userStore.loginOut()
+}
 </script>
 
 <template>
@@ -36,12 +37,14 @@ const loginOut = () => {
       <el-dropdown>
         <span class="el-dropdown-link">
           {{ name }}
-          <i class="el-icon-arrow-down el-icon--right"></i>
+          <i class="el-icon-arrow-down el-icon--right" />
         </span>
         <template #dropdown>
           <el-dropdown-menu>
             <el-dropdown-item>修改密码</el-dropdown-item>
-            <el-dropdown-item @click="loginOut">退出登录</el-dropdown-item>
+            <el-dropdown-item @click="loginOut">
+              退出登录
+            </el-dropdown-item>
           </el-dropdown-menu>
         </template>
       </el-dropdown>

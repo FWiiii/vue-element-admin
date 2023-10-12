@@ -1,15 +1,15 @@
 <script setup>
-import { storeToRefs } from "pinia";
-import { useAppStore } from "@/store/modules/app";
-import { useMediaQuery } from "@vueuse/core";
-import { minScreenMaxWidth } from "@/config/app";
-import AsideMenu from "@/layout/AsideMenu.vue";
-import HeaderBar from "@/layout/HeaderBar.vue";
-import TabsChrome from "@/layout/TabsChrome.vue";
+import { storeToRefs } from 'pinia'
+import { useMediaQuery } from '@vueuse/core'
+import { useAppStore } from '@/store/modules/app'
+import { minScreenMaxWidth } from '@/config/app'
+import AsideMenu from '@/layout/AsideMenu.vue'
+import HeaderBar from '@/layout/HeaderBar.vue'
+import TabsChrome from '@/layout/TabsChrome.vue'
 
-const isMinScreen = useMediaQuery(`(max-width: ${minScreenMaxWidth}px)`);
-const appStore = useAppStore();
-const { asideCollapse } = storeToRefs(appStore);
+const isMinScreen = useMediaQuery(`(max-width: ${minScreenMaxWidth}px)`)
+const appStore = useAppStore()
+const { asideCollapse } = storeToRefs(appStore)
 </script>
 
 <template>
@@ -22,9 +22,9 @@ const { asideCollapse } = storeToRefs(appStore);
         :size="250"
         :with-header="false"
         :show-close="false"
-        @close="appStore.toggleAside()"
-        :modelValue="!asideCollapse"
+        :model-value="!asideCollapse"
         direction="ltr"
+        @close="appStore.toggleAside()"
       >
         <AsideMenu />
       </el-drawer>
@@ -35,7 +35,7 @@ const { asideCollapse } = storeToRefs(appStore);
       </el-header>
       <TabsChrome />
       <el-main class="cus-scroll">
-        <router-view></router-view>
+        <router-view />
       </el-main>
     </el-container>
   </el-container>

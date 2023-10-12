@@ -16,14 +16,14 @@
     </el-card>
     <el-card>
       <div class="projects">
-        <div class="project-card" v-for="i in 16" :key="i">
+        <div v-for="i in 16" :key="i" class="project-card">
           <el-card>
             <div class="content-top">
               <span>Vue Element Admin</span>
             </div>
             <div class="content-main">
               <span> 一个基于 Vue3.0、Vite、ElementPlus </span>
-              <br />
+              <br>
               <span>的轻量级后台管理模板</span>
             </div>
           </el-card>

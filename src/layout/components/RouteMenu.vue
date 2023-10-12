@@ -6,9 +6,9 @@ const props = defineProps({
   },
   path: {
     type: String,
-    default: "",
+    default: '',
   },
-});
+})
 </script>
 
 <template>
@@ -21,9 +21,9 @@ const props = defineProps({
     </template>
     <RouteMenu
       v-for="m in menu.children"
-      :menu="m"
       :key="m.path"
-      :path="path + '/' + m.path"
+      :menu="m"
+      :path="`${path}/${m.path}`"
     />
   </el-sub-menu>
   <el-menu-item v-else :index="menu.redirect ? menu.redirect : path">

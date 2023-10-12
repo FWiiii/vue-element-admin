@@ -1,9 +1,9 @@
-import { createProdMockServer } from "vite-plugin-mock/es/createProdMockServer";
-import userMock from "@/mock/modules/user";
-import authMock from "@/mock/modules/auth";
+import { createProdMockServer } from 'vite-plugin-mock/es/createProdMockServer'
+import userMock from '@/mock/modules/user'
+import authMock from '@/mock/modules/auth'
 
 export function setupProdMockServer() {
-  createProdMockServer([...userMock, ...authMock]);
+  createProdMockServer([...userMock, ...authMock])
 }
 
 // const modules = import.meta.globEager('./modules/*.js')

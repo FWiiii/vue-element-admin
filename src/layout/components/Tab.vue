@@ -8,13 +8,13 @@ const props = defineProps({
     type: Object,
     default: () => {},
   },
-});
+})
 
-const emit = defineEmits(["closeTab"]);
+const emit = defineEmits(['closeTab'])
 
-const closeTab = () => {
-  emit("closeTab", props.tab);
-};
+function closeTab() {
+  emit('closeTab', props.tab)
+}
 </script>
 
 <template>
@@ -23,12 +23,12 @@ const closeTab = () => {
       {{ tab.title }}
     </div>
     <div
-      @click.stop="closeTab"
-      class="close-icon"
       v-if="active && tab.closable"
+      class="close-icon"
+      @click.stop="closeTab"
     >
       <svg width="16" height="16" stroke="#595959">
-        <path d="M 4 4 L 12 12 M 12 4 L 4 12"></path>
+        <path d="M 4 4 L 12 12 M 12 4 L 4 12" />
       </svg>
     </div>
   </div>

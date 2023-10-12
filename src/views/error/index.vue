@@ -10,7 +10,9 @@
       align-items: center;
     "
   >
-    <h1 style="font-size: 88px">404</h1>
+    <h1 style="font-size: 88px">
+      404
+    </h1>
   </div>
 </template>
 

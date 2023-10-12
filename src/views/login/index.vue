@@ -1,74 +1,78 @@
 <script setup>
-import { useRouter } from "vue-router";
-import service from "@/utils/request";
-import { setToken } from "@/utils/useStorage";
+import { useRouter } from 'vue-router'
+import service from '@/utils/request'
+import { setToken } from '@/utils/useStorage'
 
-const router = useRouter();
-const loginForm = reactive({ name: "", password: "" });
-const loading = ref(false);
+const router = useRouter()
+const loginForm = reactive({ name: '', password: '' })
+const loading = ref(false)
 
-const login = async () => {
-  loading.value = true;
-  const { name, password } = loginForm;
+async function login() {
+  loading.value = true
+  const { name, password } = loginForm
   if (!name || !password) {
-    ElMessage.error("请输入用户名和密码");
-    loading.value = false;
-    return;
+    ElMessage.error('请输入用户名和密码')
+    loading.value = false
+    return
   }
   setTimeout(async () => {
     try {
-      loading.value = true;
-      const result = await service.post("/auth/login", loginForm);
+      loading.value = true
+      const result = await service.post('/auth/login', loginForm)
 
-      const res = result.data;
+      const res = result.data
       if (res.code === 0) {
         ElMessage({
-          message: "登陆成功",
-          type: "success",
-        });
-        setToken(res.data.token);
-        router.push("/");
-      } else {
+          message: '登陆成功',
+          type: 'success',
+        })
+        setToken(res.data.token)
+        router.push('/')
+      }
+      else {
         ElMessage({
           message: res.message,
-          type: "warning",
-        });
+          type: 'warning',
+        })
       }
-    } catch (error) {
-      ElMessage.error(error.message);
     }
-    loading.value = false;
-  }, 1000);
-};
+    catch (error) {
+      ElMessage.error(error.message)
+    }
+    loading.value = false
+  }, 1000)
+}
 </script>
 
 <template>
   <div class="login">
-    <div class="login-box" v-loading="loading">
+    <div v-loading="loading" class="login-box">
       <h1>Vue-ElementPlus</h1>
-      <p class="version">Version 1.0.0</p>
+      <p class="version">
+        Version 1.0.0
+      </p>
       <el-form class="form">
         <el-input
-          size="large"
+          #prepend
           v-model="loginForm.name"
+          size="large"
           placeholder="admin或editor"
           type="text"
           maxlength="50"
-          #prepend
         >
           <el-icon>
             <User />
           </el-icon>
         </el-input>
         <el-input
-          size="large"
           ref="password"
+          #prepend
           v-model="loginForm.password"
+          size="large"
           placeholder="密码随便输"
           name="password"
           maxlength="50"
           show-password
-          #prepend
         >
           <el-icon>
             <Lock />
@@ -77,10 +81,11 @@ const login = async () => {
         <el-button
           size="large"
           type="primary"
-          @click="login()"
           style="width: 100%"
-          >登录</el-button
+          @click="login()"
         >
+          登录
+        </el-button>
       </el-form>
     </div>
   </div>

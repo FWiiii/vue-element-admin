@@ -1,48 +1,50 @@
 <script setup>
-import { storeToRefs } from "pinia";
-import { useRouter, useRoute } from "vue-router";
-import { useAppStore } from "@/store/modules/app";
-import TabsChromeX from "@/layout/components/TabsChromeX.vue";
+import { storeToRefs } from 'pinia'
+import { useRoute, useRouter } from 'vue-router'
+import { useAppStore } from '@/store/modules/app'
+import TabsChromeX from '@/layout/components/TabsChromeX.vue'
 
-const route = useRoute();
-const router = useRouter();
-const activePath = ref(route.path);
-const appStore = useAppStore();
-const { tabsChrome } = storeToRefs(appStore);
+const route = useRoute()
+const router = useRouter()
+const activePath = ref(route.path)
+const appStore = useAppStore()
+const { tabsChrome } = storeToRefs(appStore)
 
 router.afterEach((to) => {
-  //当前路由不执行
-  activePath.value = to.path;
-  pushThisRoute(to.path, to.meta.title);
-});
+  // 当前路由不执行
+  activePath.value = to.path
+  pushThisRoute(to.path, to.meta.title)
+})
 
-const pushThisRoute = (path, title) => {
-  let tab = { path, title, closable: true };
-  appStore.pushTabsChrome(tab);
-};
-//刷新时当前的页面
-pushThisRoute(route.path, route.meta.title);
+function pushThisRoute(path, title) {
+  const tab = { path, title, closable: true }
+  appStore.pushTabsChrome(tab)
+}
+// 刷新时当前的页面
+pushThisRoute(route.path, route.meta.title)
 
-const clickTab = (t) => {
-  router.push(t.path);
-};
-const removeTab = (t) => {
-  let r = appStore.removeTabChrome(t);
-  if (r) {
-    router.push(r.path);
-  }
-};
+function clickTab(t) {
+  router.push(t.path)
+}
+function removeTab(t) {
+  const r = appStore.removeTabChrome(t)
+  if (r)
+    router.push(r.path)
+}
 
-const removeAllTab = () => {
-  router.push("/");
-  appStore.removeAllTab();
-};
+function removeAllTab() {
+  router.push('/')
+  appStore.removeAllTab()
+}
 </script>
+
 <template>
   <div class="nav-tab">
     <div class="tabs-chrome">
-      <TabsChromeX ref="tabRef" :tabs="tabsChrome" :activePath="activePath" @clickTab="clickTab"
-        @removeTab="removeTab" />
+      <TabsChromeX
+        ref="tabRef" :tabs="tabsChrome" :active-path="activePath" @clickTab="clickTab"
+        @removeTab="removeTab"
+      />
     </div>
 
     <div class="nav-action">

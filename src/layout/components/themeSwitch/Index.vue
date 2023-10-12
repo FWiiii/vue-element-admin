@@ -1,7 +1,8 @@
 <script setup>
-import DarkIcon from "./icons/Dark.vue";
-import LightIcon from "./icons/Light.vue";
-const emit = defineEmits(["toggleDarkMode"]);
+import DarkIcon from './icons/Dark.vue'
+import LightIcon from './icons/Light.vue'
+
+const emit = defineEmits(['toggleDarkMode'])
 </script>
 
 <template>
